@@ -1,0 +1,31 @@
+// Colours
+
+$white: #ffffff;
+$black: #000000;
+$koamaru: #1D1485;
+$spanish: #F8F3E2;
+$romantic: #FFD2B1;
+$grenadier: #E23A01;
+
+// Typography
+
+$base-font-stack: 'Inter', Helvetica, Arial, sans-serif;
+
+@font-face {
+  font-family: "Bourton";
+  src: url("../fonts/bourtonlinebold.woff2") format("woff2"),
+       url("../fonts/bourtonlinebold.woff") format("woff");
+}
+
+$secondary-font-stack: 'Bourton', Helvetica, Arial, sans-serif;
+
+
+
+
+// Sizing
+
+$base-font-size: 1em;
+
+@function emCal($pixelBasedNum){
+  @return $pixelBasedNum / $base-font-size * 1em
+}
