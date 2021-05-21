@@ -47,6 +47,7 @@ body {
   // min-height: 100vh;
   @include flex-column;
   overflow-x: hidden;
+  background-color: $white;
 }
 
 html {
@@ -61,96 +62,21 @@ html {
 
 a {
   text-decoration: none;
-  color: $grenadier;
+  color: $java;
+}
+
+main {
+    @include flex-column;
 }
 
 // Backgrounds
 
-.koamaru-bg {
-  background-color: $koamaru;
-  h2, h3, h5, p {
-    color: $white;
-  }
-  .super-paragraph {
-    color: $romantic;
-  }
-  &.img-txt {
-    .container {
-      .txtwrap {
-        &.col {
-          h3 {
-            @include flex-row;
-            align-items: center;
-            align-content: center;
-            &::after {
-              display: flex;
-              content: "";
-              width: 62px;
-              height: 24px;
-              background-image: url(../images/white-arrow.svg);
-              background-repeat: no-repeat;
-              background-size: contain;
-              margin-left: 32px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.spanish-bg {
-  background-color: $spanish;
-  .super-paragraph, h2, h3, h4, h5, a {
-    color: $koamaru;
-  }
-}
-
-.white-bg {
-  background-color: $white;
-}
-
-.romantic-bg {
-  background-color: $romantic;
-  &.img-txt {
-    .super-paragraph, h3, h5 {
-      color: $koamaru;
-    }
-  }
-  &.img-txt {
-    .container {
-      .txtwrap {
-        &.col {
-          h3 {
-            @include flex-row;
-            align-items: center;
-            align-content: center;
-            &::after {
-              display: flex;
-              content: "";
-              width: 62px;
-              height: 24px;
-              background-image: url(../images/koamaru-arrow.svg);
-              background-repeat: no-repeat;
-              background-size: contain;
-              margin-left: 32px;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-.grenadier-bg {
-  background-color: $grenadier;
-}
 
 
 // Widgets
 
-.logo {
-  background-image: url(../images/logo.svg);
+.xilo-logo {
+  background-image: url(../images/xilo-logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
   text-indent: -9999999px;
@@ -162,288 +88,68 @@ a {
 
 // Blocks
 
+header {
+  padding: 21px 0px;
+  width: 100%;
+  background: $white;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 15px rgba(0, 0, 0, 0.11);
+  .container {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    a {
+      &.home-link {
+        color: $mirage;
+        font-weight: bold;
+        @include flex-row;
+        align-items: center;
+        align-content: center;
+        &::before {
+          content: "";
+          display: flex;
+          width: 18px;
+          height: 20px;
+          background-image: url(../images/home-icon.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
 #intro {
-  height: 95vh;
+  height: 608px;
   @include flex-column;
   flex-grow: 1;
   justify-content: space-between;
-  position: relative;
-  header {
-    @include flex-row;
-    justify-content: space-between;
-    padding: 104px 0px;
-    .nav-trigger {
-      border: none;
-      background: none;
-      @include flex-row;
-      cursor: pointer;
-      text-indent: -9999999px;
-      border-radius: 50%;
-      border: 2px solid $koamaru;
-      height: 48px;
-      width: 48px;
-      position: relative;
-      transition: 0.25s;
-      z-index: 1000;
-      &::after {
-        content: "";
-        height: 10px;
-        width: 16px;
-        display: flex;
-        border-bottom: 2px solid $koamaru;
-        border-top: 2px solid $koamaru;
-        position: absolute;
-        left: 14px;
-        top: 16px;
-        transition: 0.25s;
-      }
-      &:hover {
-        background-color: $koamaru;
-        transition: 0.25s;
-        &::after {
-          border-color: $white;
-          transition: 0.25s;
-        }
-      }
-    }
-    .nav-wrap {
-      display: none;
-    }
-  }
-  .txtwrap {
-    &.col {
-      position: absolute;
-      top: auto;
-      bottom: 120px;
-      margin-top: auto;
-      max-width: 830px;
-      .scroll {
-        color: $black;
-      }
-    }
-  }
-  .imgwrap {
-    position: absolute;
-    max-width: 55vw;
-    width: 100%;
-    height: 100%;
-    bottom: 0;
-    right: 0;
-    img {
-      position: absolute;
-      &.large-planet {
-        width: 90%;
-        right: -200px;
-        bottom: -129px;
-      }
-      &.medium-planet {
-        right: 55%;
-        bottom: -25px;
-        z-index: 100;
-        width: 25%;
-      }
-      &.small-planet {
-        right: 56%;
-        bottom: 64%;
-        width: 10%;
-        z-index: 100;
-      }
-    }
-  }
-}
-
-.txtwrap {
-  &.col {
-    @include flex-column;
-    width: 100%;
-    .scroll {
-      display: flex;
-      align-self: flex-start;
-    }
-  }
-}
-
-.txtblock {
-  padding: 190px 0px;
-  .container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
-.img-txt {
-  .projectimg {
-    background-color: $white;
-    background-size: cover;
-    background-position: center center;
-    height: 80vh;
-    &.xilo {
-      background-image: url(../images/xilo-placeholder.jpg);
-    }
-    &.uno {
-      background-image: url(../images/xilo-placeholder.jpg);
-    }
-  }
-  .container {
-    padding: 88px 0px 160px 0px;
-    .txtwrap {
-      &.col {
-        max-width: 940px;
-        width: 100%;
-        a {
-          h3 {
-            &::after {
-              transition: 0.25s;
-            }
-          }
-          &:hover {
-            h3 {
-              &::after {
-                margin-left: 48px;
-                transition: 0.25s;
-              }
-            }
-          }
-        }
-        h5 {
-          margin-top: 64px;
-        }
-      }
-    }
-  }
-}
-
-.colgrid {
-  .first-imgwrap, .second-imgwrap {
-    position: relative;
-    img {
-      position: absolute;
-      top: 0;
-      &.about-medium-planet {
-        top: -50px;
-        right: 0;
-      }
-      &.about-twin-planet {
-        top: 197px;
-        left: 56px;
-      }
-      &.about-large-planet {
-        top: 320px;
-        left: -300px;
-      }
-    }
-  }
-  .container {
-    padding-top: 460px;
-  }
-  .txtwrap {
-    &.col {
-      max-width: 49.5%;
-      width: 100%;
-      margin-bottom:420px;
-      margin-left: auto;
-      margin-right: 0%;
-      h2 {
-        margin-bottom: 32px;
-      }
-      .scroll {
-        margin-top: 24px;
-      }
-    }
-  }
-}
-
-.listblock {
-  .container {
-    padding: 260px 0px 0px 0px;
-    @include flex-column;
-    ul.lrglist {
-      @include flex-column;
-      margin-top: 96px;
-      li {
-        @include flex-row;
-        max-width: 1200px;
-        justify-content: flex-start;
-        align-items: center;
-        align-content: center;
-        padding: 32px 0;
-        h4 {
-          max-width: 20%;
-          width: 100%;
-        }
-        a {
-          text-align: left;
-          &::after {
-            content: "";
-            display: flex;
-            width: 0%;
-            height: 4px;
-            margin-top: 6px;
-            margin-bottom: -10px;
-            background-color: $koamaru;
-            transition: all 0.25s ease-in-out;
-          }
-          &:hover {
-            &::after {
-              width: 100%;
-              transition: all 0.25s ease-in-out;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-ul.img-list {
-  @include flex-row;
-  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 40px;
-  li {
-    margin-right: 16px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-  img {
-    width: 50px;
-    height: 50px;
-  }
+  align-content: center;
+  text-align: center;
+  position: relative;
+  background: $whisper;
+
 }
 
-.rowwrap {
-  @include flex-row;
-  justify-content: space-between;
-  align-items: flex-start;
-  align-content: flex-start;
-  .txtwrap {
-    &.col {
-      max-width: 24%;
-      width: 100%;
-      align-self: flex-start;
-      margin-left: auto;
-      margin-right: auto;
-      img {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 40px;
-        align-self: flex-start;
-      }
-      h3 {
-        margin-bottom: 16px;
-      }
-    }
-  }
-}
+
 
 footer {
+  background-color: $mirage;
+  width: 100%;
   .container {
     @include flex-row;
-    justify-content: space-between;
-    padding-top: 168px;
-    padding-bottom: 74px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 52px;
+    padding-bottom: 52px;
+
+  }
+  p {
+    color: $white;
+    text-align: center;
   }
   a {
     text-decoration: underline;
