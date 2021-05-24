@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "gulpfile.js",
-  "author": "Shramee Srivastav",
-  "license": "MIT",
-  "homepage": "http://shramee.me",
   "repository": {
     "type": "git",
     "url": "git@github.com:AnomalyInc-Pete/Xilo-Support.git"
