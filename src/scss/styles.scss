@@ -22,6 +22,11 @@
   flex-direction: column;
 }
 
+@mixin block-shadow {
+  background: $white;
+  box-shadow: $box-shadow;
+}
+
 // Global styles
 
 *,
@@ -95,8 +100,7 @@ main {
 header {
   padding: 21px 0px;
   width: 100%;
-  background: $white;
-  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 15px rgba(0, 0, 0, 0.11);
+  @include block-shadow;
   .container {
     @include flex-row;
     justify-content: space-between;
@@ -134,8 +138,10 @@ header {
   text-align: center;
   position: relative;
   background: $whisper;
+  padding-top: 100px;
   .common-questions {
     @include flex-column;
+    margin-top: 56px;
     .row-wrap {
       max-width: 1075px;
       width: 100%;
@@ -145,15 +151,193 @@ header {
       .block {
         @include flex-column;
         border-radius: 5px;
-        border-top: 3px solid $java;
+        border-top: 5px solid $java;
         padding: 32px;
-        background-color: $white;
         max-width: 349px;
         width: 100%;
-        box-shadow: $box-shadow;
+        text-align: left;
+        align-items: flex-start;
+        @include block-shadow;
         p {
           font-size: emCal(16px);
         }
+      }
+    }
+  }
+}
+
+#status {
+  .container {
+    max-width: 700px;
+    width: 100%;
+    @include flex-column;
+    @include block-shadow;
+    border-radius: 5px;
+    padding: 16px 24px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 100;
+    .overview {
+      @include  flex-row;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+      ul {
+        li {
+          &.online {
+            display: none;
+          }
+          &.alert {
+            display: none;
+          }
+          &.offline {
+            display: none;
+          }
+          &.active {
+            display: flex;
+          }
+        }
+      }
+    }
+    .message {
+      display: none;
+    }
+  }
+}
+
+#kb-topics {
+  .container {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    max-width: 1193px;
+    width: 100%;
+    .titles {
+      @include flex-row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      a {
+        font-size: 24px;
+        color: $mirage;
+        @include flex-row;
+        align-items: center;
+        &.right-arrow {
+          &::after {
+            content: "";
+            background-image: url(../images/right-arrow.svg);
+            display: flex;
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            margin-top: 3px;
+          }
+        }
+      }
+    }
+    .topics-wrap {
+      @include flex-row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .block {
+        @include block-shadow;
+        border-radius: 5px;
+        border-top: 5px solid $java;
+        padding: 24px;
+        max-width: 225px;
+        width: 100%;
+        color: $mirage;
+        font-size: 16px;
+        margin-bottom: 16px;
+        .topic {
+          @include flex-row;
+          align-items: center;
+          &::before {
+            content: "";
+            display: flex;
+            margin-right: 16px;
+            width: 29px;
+            height: 44px;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+          &.billing {
+            &::before {
+              background-image: url(../images/billing-icon.svg);
+            }
+          }
+          &.control-panel {
+            &::before {
+              background-image: url(../images/control-panel-icon.svg);
+            }
+          }
+          &.databases {
+            &::before {
+              background-image: url(../images/databases-icon.svg);
+            }
+          }
+          &.domain-names {
+            &::before {
+              background-image: url(../images/domain-names-icon.svg);
+            }
+          }
+          &.email {
+            &::before {
+              background-image: url(../images/email-icon.svg);
+            }
+          }
+          &.ftp {
+            &::before {
+              background-image: url(../images/ftp-icon.svg);
+            }
+          }
+          &.services {
+            &::before {
+              background-image: url(../images/services-icon.svg);
+            }
+          }
+          &.ssl {
+            &::before {
+              background-image: url(../images/ssl-icon.svg);
+            }
+          }
+          &.aup {
+            &::before {
+              background-image: url(../images/aup-icon.svg);
+            }
+          }
+          &.problems {
+            &::before {
+              background-image: url(../images/problems-icon.svg);
+            }
+          }
+          &.reseller {
+            &::before {
+              background-image: url(../images/reseller-icon.svg);
+            }
+          }
+          &.shared {
+            &::before {
+              background-image: url(../images/shared-icon.svg);
+            }
+          }
+          &.dedicated {
+            &::before {
+              background-image: url(../images/dedicated-icon.svg);
+            }
+          }
+          &.cloud {
+            &::before {
+              background-image: url(../images/cloud-icon.svg);
+            }
+          }
+          &.premium {
+            &::before {
+              background-image: url(../images/premium-icon.svg);
+            }
+          }
+        }
+
+
       }
     }
   }

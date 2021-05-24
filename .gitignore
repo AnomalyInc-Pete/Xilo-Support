@@ -3,3 +3,5 @@ node_modules
 .sass-cache
 .publish
 .idea
+.git
+.git 2
