@@ -1,0 +1,183 @@
+@import 'vendor/variables';
+@import 'vendor/reset';
+@import 'vendor/typography';
+
+
+
+// Mixins
+
+@mixin box-sizing {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Global styles
+
+*,
+*::before,
+*:after {
+  @include box-sizing
+  margin: 0;
+  padding: 0;
+}
+
+/* IE11 */
+@media all and (-ms-high-contrast:none) {
+  *::-ms-backdrop,
+  [data-aos^=fade][data-aos^=fade],[data-aos^=zoom][data-aos^=zoom] {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: $base-font-stack;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  // min-height: 100vh;
+  @include flex-column;
+  overflow-x: hidden;
+  background-color: $white;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 85%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: $java;
+}
+
+main {
+    @include flex-column;
+}
+
+.row-wrap {
+  @include flex-row;
+}
+
+// Backgrounds
+
+
+
+// Widgets
+
+.xilo-logo {
+  background-image: url(../images/xilo-logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-indent: -9999999px;
+  display: flex;
+  max-width: 154px;
+  width: 100%;
+  height: 42px;
+}
+
+// Blocks
+
+header {
+  padding: 21px 0px;
+  width: 100%;
+  background: $white;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 15px rgba(0, 0, 0, 0.11);
+  .container {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    a {
+      &.home-link {
+        color: $mirage;
+        font-weight: bold;
+        @include flex-row;
+        align-items: center;
+        align-content: center;
+        &::before {
+          content: "";
+          display: flex;
+          width: 18px;
+          height: 20px;
+          background-image: url(../images/home-icon.svg);
+          background-repeat: no-repeat;
+          background-position: center;
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+
+#intro {
+  height: 608px;
+  @include flex-column;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  position: relative;
+  background: $whisper;
+  .common-questions {
+    @include flex-column;
+    .row-wrap {
+      max-width: 1075px;
+      width: 100%;
+      justify-content: space-between;
+      margin: 0 auto;
+      margin-top: 40px;
+      .block {
+        @include flex-column;
+        border-radius: 5px;
+        border-top: 3px solid $java;
+        padding: 32px;
+        background-color: $white;
+        max-width: 349px;
+        width: 100%;
+        box-shadow: $box-shadow;
+        p {
+          font-size: emCal(16px);
+        }
+      }
+    }
+  }
+}
+
+
+
+footer {
+  background-color: $mirage;
+  width: 100%;
+  .container {
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 52px;
+    padding-bottom: 52px;
+
+  }
+  p {
+    color: $white;
+    text-align: center;
+  }
+  a {
+    text-decoration: underline;
+  }
+}

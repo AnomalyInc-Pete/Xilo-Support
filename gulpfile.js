@@ -5,7 +5,7 @@ var
 
 gulp.task( 'styles', function () {
 	return gulp
-		.src( './src/sass/**/*.scss' )
+		.src( './src/scss/**/*.scss' )
 		.pipe( $.sass().on( 'error', $.sass.logError ) )
 		.pipe( $.autoprefixer( 'last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4' ) )
 		.pipe( $.cleanCss() )
@@ -49,7 +49,7 @@ gulp.task( 'images', function () {
 
 gulp.task( 'html', function () {
 	return gulp
-		.src( './src/**/*.html' )
+		.src( './*.html' )
 		.pipe( gulp.dest( 'public/' ) )
 } );
 
@@ -70,10 +70,10 @@ gulp.task( 'deploy', function () {
 
 gulp.task( 'watch', function () {
 	// Watch .html files
-	gulp.watch( 'src/**/*.html', ['html', browserSync.reload] );
-	gulp.watch( "public/*.html" ).on( 'change', browserSync.reload );
+	gulp.watch( '*.html', ['html', browserSync.reload] );
+	gulp.watch( "*.html" ).on( 'change', browserSync.reload );
 	// Watch .sass files
-	gulp.watch( 'src/sass/**/*.scss', ['styles', browserSync.reload] );
+	gulp.watch( 'src/scss/**/*.scss', ['styles', browserSync.reload] );
 	// Watch .js files
 	gulp.watch( 'src/js/*.js', ['scripts', browserSync.reload] );
 	// Watch .js files

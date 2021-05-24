@@ -1,0 +1,23 @@
+// Colours
+
+$white: #ffffff;
+$black: #000000;
+$mirage: #1B1B3A;
+$whisper: #F1F1F8;
+$java: #17BEBB;
+
+// Typography
+
+$base-font-stack: 'Brandon Text', Helvetica, sans-serif;
+
+// Sizing
+
+$base-font-size: 1em;
+
+// Effects
+
+$box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 15px rgba(0, 0, 0, 0.11);
+
+@function emCal($pixelBasedNum){
+  @return $pixelBasedNum / $base-font-size * 1em
+}
