@@ -10,25 +10,26 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.7.5",
+    "browser-sync": "^2.26.14",
     "del": "^3.0.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-changed": "^3.1.0",
-    "gulp-clean-css": "^3.3.1",
+    "gulp-clean-css": "^3.10.0",
     "gulp-concat": "^2.5.2",
     "gulp-gh-pages": "^0.5.4",
     "gulp-imagemin": "^4.1.0",
-    "gulp-load-plugins": "^1.5.0",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^4.0.1",
+    "gulp-load-plugins": "^1.6.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
     "gulp-size": "^3.0.0",
-    "gulp-uglify": "^3.0.0",
+    "gulp-uglify": "^3.0.2",
     "natives": "^1.1.6"
   },
   "dependencies": {
-    "beeper": "^3.0.0"
+    "beeper": "^3.0.0",
+    "gulp-vfs": "^0.1.1"
   }
 }

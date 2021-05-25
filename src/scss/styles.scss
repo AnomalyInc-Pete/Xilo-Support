@@ -68,6 +68,9 @@ html {
 a {
   text-decoration: none;
   color: $java;
+  &:hover {
+    color: $mirage;
+  }
 }
 
 main {
@@ -80,6 +83,9 @@ main {
 
 // Backgrounds
 
+.whisper-bg {
+  background-color: $whisper;
+}
 
 
 // Widgets
@@ -93,6 +99,22 @@ main {
   max-width: 154px;
   width: 100%;
   height: 42px;
+}
+
+.button {
+  background-color: $java;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.13em;
+  border-radius: 5px;
+  padding: 16px 50px;
+  margin-top: 32px;
+  align-content: center;
+  &:hover {
+    background-color: $mirage;
+    color: $white;
+  }
 }
 
 // Blocks
@@ -255,7 +277,7 @@ header {
             content: "";
             display: flex;
             margin-right: 16px;
-            width: 29px;
+            width: 35px;
             height: 44px;
             background-repeat: no-repeat;
             background-position: center;
@@ -338,6 +360,99 @@ header {
         }
 
 
+      }
+    }
+  }
+}
+
+.three-col {
+  .container {
+    display: flex;
+    @include flex-column;
+    align-items: center;
+    max-width: 1074px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    .columns {
+      @include flex-row;
+      justify-content: space-between;
+      max-width: 1074px;
+      width: 100%;
+      margin-top: 40px;
+      .block {
+        @include flex-column;
+        @include block-shadow;
+        max-width: 347px;
+        width: 100%;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+        padding: 32px;
+        text-align: center;
+        h3 {
+          margin-bottom: 16px;
+          margin-top: 32px;
+        }
+        p {
+          font-size: 20px;
+          line-height: 27.2px;
+        }
+      }
+    }
+  }
+}
+
+.centered {
+  .container {
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    @include flex-column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 80px 0;
+    .titles {
+      margin-bottom: 45px;
+      h2 {
+        margin-bottom: 20px;
+      }
+      h4 {
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 27.2px;
+        color: $mirage;
+      }
+    }
+    .link-list {
+      @include flex-column
+      align-items: center;
+      align-content: center;
+      li {
+        margin-bottom: 12px;
+        a {
+          display: flex;
+          @include flex-row;
+          align-items: center;
+          text-align: center;
+          font-weight: bold;
+          font-size: 18px;
+          align-content: center;
+          &::after {
+            content: "";
+            width: 12px;
+            height: 12px;
+            display: flex;
+            margin-top: 2px;
+            margin-left: 8px;
+            background-image: url(../images/right-arrow.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+          }
+        }
       }
     }
   }
