@@ -145,6 +145,9 @@ header {
           background-position: center;
           margin-right: 8px;
         }
+        &:hover {
+          color: $java;
+        }
       }
     }
   }
@@ -161,6 +164,48 @@ header {
   position: relative;
   background: $whisper;
   padding-top: 100px;
+  .question-form {
+    margin: 0 auto;
+    @include flex-column;
+    form {
+      input {
+        border: none;
+        border-radius: 50px;
+        max-width: 830px;
+        width: 100%;
+        height: 56px;
+        @include block-shadow;
+        padding: 16px 300px 20px 60px;
+        font-size: 24px;
+        font-family: $base-font-stack;
+          background-image: url(../images/search-icon.svg);
+          background-repeat: no-repeat;
+          background-position: 27px center;
+          &:focus {
+            outline: none;
+          }
+      }
+      button {
+        margin-left: -288px;
+        background: $java;
+        border: none;
+        color: $white;
+        border-radius: 50px;
+        padding: 12px 45px;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 0.13em;
+        font-family: $base-font-stack;
+        cursor: pointer;
+        position: relative;
+        top: -1px;
+        &:hover {
+          background-color: $mirage;
+        }
+      }
+    }
+  }
   .common-questions {
     @include flex-column;
     margin-top: 56px;
@@ -180,8 +225,15 @@ header {
         text-align: left;
         align-items: flex-start;
         @include block-shadow;
+        transition: 0.25s;
+        &:hover {
+          transition: 0.25s;
+          border-top: 5px solid $mirage;
+          box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 23px 8px rgba(0, 0, 0, 0.11);
+        }
         p {
           font-size: emCal(16px);
+          color: $mirage;
         }
       }
     }
@@ -206,14 +258,35 @@ header {
       align-content: center;
       ul {
         li {
+          display: none;
+          font-size: 24px;
+          font-weight: 500;
+          flex-direction: row;
+          align-items: center;
+          &::after {
+            content: "";
+            text-indent: -99999px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 40px;
+            height: 40px;
+            margin-top: 6px;
+            margin-left: 8px;
+          }
           &.online {
-            display: none;
+            &::after {
+              background-image: url(../images/online-indicator.svg);
+            }
           }
           &.alert {
-            display: none;
+            &::after {
+              background-image: url(../images/alert-indicator.svg);
+            }
           }
           &.offline {
-            display: none;
+            &::after {
+              background-image: url(../images/offline-indicator.svg);
+            }
           }
           &.active {
             display: flex;
