@@ -28,13 +28,10 @@
     "natives": "^1.1.6"
   },
   "dependencies": {
-    "@babel/core": "^7.14.3",
-    "async-limiter": "^2.0.0",
     "beeper": "^3.0.0",
     "fs-mkdirp-stream": "^1.0.0",
     "gulp-vfs": "^0.1.1",
     "lead": "^3.0.0",
-    "lodash.assign": "^4.2.0",
     "lodash.clonedeep": "^4.5.0",
     "npm-install-all": "^1.1.21",
     "object-path": "^0.11.5",
@@ -43,7 +40,6 @@
     "remove-bom-stream": "^1.2.0",
     "resolve-options": "^1.1.0",
     "to-through": "^2.0.0",
-    "ultron": "^1.1.1",
     "vinyl-sourcemap": "^1.1.0"
   },
   "bugs": {
