@@ -117,10 +117,57 @@ main {
   }
 }
 
+.question-form {
+  margin: 0 auto;
+  @include flex-column;
+  form {
+    input {
+      border: none;
+      border-radius: 50px;
+      max-width: 830px;
+      width: 100%;
+      height: 56px;
+      @include block-shadow;
+      padding: 16px 300px 20px 60px;
+      font-size: 24px;
+      font-family: $base-font-stack;
+        background-image: url(../images/search-icon.svg);
+        background-repeat: no-repeat;
+        background-position: 27px center;
+        &:focus {
+          outline: none;
+        }
+    }
+    button {
+      margin-left: -288px;
+      background: $java;
+      border: none;
+      color: $white;
+      border-radius: 50px;
+      padding: 12px 45px;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.13em;
+      font-family: $base-font-stack;
+      cursor: pointer;
+      position: relative;
+      top: -1px;
+      &:hover {
+        background-color: $mirage;
+      }
+    }
+  }
+}
+
 .number {
   background-color: $minsk;
   border-radius: 50px;
   padding: 4px 12px;
+  max-width: 35px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   color: $white;
   font-weight: 500;
 }
@@ -167,6 +214,32 @@ header {
         }
       }
     }
+    .question-form {
+      max-width: 694px;
+      width: 100%;
+      form {
+        justify-content: space-between;
+        @include flex-row;
+        max-width: 694px;
+        width: 100%;
+        input {
+          font-size: 20px;
+          box-shadow: none;
+          border: 1px solid $alto;
+          padding-right: 100px;
+          max-width: 694px;
+          width: 100%;
+        }
+        button {
+          align-self: flex-end;
+          font-size: 14px;
+          margin-right: auto;
+          margin-left: -162px;
+          position: relative;
+          top: -6px;
+        }
+      }
+    }
   }
 }
 
@@ -181,48 +254,6 @@ header {
   position: relative;
   background: $whisper;
   padding-top: 100px;
-  .question-form {
-    margin: 0 auto;
-    @include flex-column;
-    form {
-      input {
-        border: none;
-        border-radius: 50px;
-        max-width: 830px;
-        width: 100%;
-        height: 56px;
-        @include block-shadow;
-        padding: 16px 300px 20px 60px;
-        font-size: 24px;
-        font-family: $base-font-stack;
-          background-image: url(../images/search-icon.svg);
-          background-repeat: no-repeat;
-          background-position: 27px center;
-          &:focus {
-            outline: none;
-          }
-      }
-      button {
-        margin-left: -288px;
-        background: $java;
-        border: none;
-        color: $white;
-        border-radius: 50px;
-        padding: 12px 45px;
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 0.13em;
-        font-family: $base-font-stack;
-        cursor: pointer;
-        position: relative;
-        top: -1px;
-        &:hover {
-          background-color: $mirage;
-        }
-      }
-    }
-  }
   .common-questions {
     @include flex-column;
     margin-top: 56px;
@@ -579,6 +610,8 @@ header {
   .container {
     padding-top: 80px;
     padding-bottom: 180px;
+    max-width: 1436px;
+    width: 100%;
     .breadcrumbs {
       margin-bottom: 8px;
     }
@@ -597,6 +630,7 @@ header {
     width: 100%;
     @include block-shadow;
     @include flex-row;
+    border-radius: 5px;
     padding: 40px 32px;
     justify-content: space-between;
     .listwrap {
@@ -626,6 +660,44 @@ header {
               a {
                 font-size: 16px;
               }
+              &.pubdate, &.topic, &.tags {
+                @include flex-row;
+                align-items: center;
+                &::before {
+                  content: "";
+                  background-repeat: no-repeat;
+                  display: flex;
+                  margin-right: 6px;
+                  background-size: contain;
+                }
+              }
+              &.pubdate {
+                &::before {
+                  background-image: url(../images/calendar-icon.svg);
+                  width: 15px;
+                  height: 12px;
+                }
+              }
+              &.topic {
+                &::before {
+                  background-image: url(../images/folder-icon.svg);
+                  width: 16px;
+                  height: 12px;
+                }
+              }
+              &.tags {
+                a {
+                  margin-left: 4px;
+                  &:first-child {
+                    margin-left: 0;
+                  }
+                }
+                &::before {
+                  background-image: url(../images/tag-icon.svg);
+                  width: 15px;
+                  height: 12px;
+                }
+              }
             }
           }
         }
@@ -642,6 +714,7 @@ header {
     width: 100%;
     @include block-shadow;
     @include flex-row;
+    border-radius: 5px;
     justify-content: space-between;
     .content {
       padding-left: 32px;
@@ -667,20 +740,43 @@ header {
           h5 {
             font-size: 20px;
             color: $mirage;
+            @include flex-row;
+            align-items: center;
+            &::before {
+              display: flex;
+              content: "";
+              width: 22px;
+              height: 17px;
+              background-image: url(../images/folder-icon.svg);
+              background-repeat: no-repeat;
+              margin-right: 8px;
+            }
           }
         }
         .articlelist {
-          padding: 16px;
+          padding: 24px;
+          padding-left: 46px;
           @include flex-column;
           color: $mirage;
           li {
             font-size: 18px;
             font-weight: 400;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
             a {
               color: $mirage;
+              @include flex-row;
+              align-items: center;
+              font-weight: 500;
               &:hover {
                 color: $java;
+              }
+              &::before {
+                content: "";
+                background-image: url(../images/document-icon.svg);
+                width: 12px;
+                height: 16px;
+                display: flex;
+                margin-right: 8px;
               }
             }
             &:last-child {
@@ -694,6 +790,72 @@ header {
       max-width: 347px;
       width: 100%;
       background-color: $mirage;
+      padding: 32px 32px;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      h3 {
+        color: $white;
+        margin-bottom: 16px;
+      }
+      .categorylist {
+        li {
+          margin-bottom: 16px;
+          max-width: 100%;
+          a {
+            font-size: 20px;
+            color: $white;
+            @include flex-row;
+            font-weight: 500;
+            justify-content: space-between;
+            &:hover {
+              color: $java;
+              .number {
+                background-color: $minsk;
+              }
+            }
+            .number {
+              font-size: 16px;
+              background-color: $java;
+            }
+          }
+        }
+        ul {
+          li {
+            margin-bottom: 8px;
+            &:first-child {
+              margin-top: 16px;
+            }
+            &:last-child {
+              margin-bottom: 20px;
+            }
+            a {
+              font-size: 18px;
+              color: $java;
+              @include  flex-row;
+              align-items: center;
+              justify-content: flex-start;
+              .number {
+                background-color: $minsk;
+                align-self: flex-end;
+                margin-right: 0;
+                margin-left: auto;
+              }
+              &:hover {
+                color: $white;
+                .number {
+                  background-color: $java;
+                }
+              }
+              &::before {
+                content: "–";
+                display: flex;
+                color: $white;
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
