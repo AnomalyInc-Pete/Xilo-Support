@@ -298,7 +298,30 @@ main {
       transform: rotate(180deg);
     }
   }
-
+  &.numbered {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    align-self: center;
+    .button {
+      padding: 16px 20px;
+      margin-right: 16px;
+      &.next {
+        margin-left: 0;
+        &::after {
+          margin-left: 0;
+        }
+      }
+      &.previous {
+        &::before {
+          margin-right: 0;
+        }
+      }
+      &.current {
+        background-color: $minsk;
+      }
+    }
+  }
 }
 
 // Blocks
@@ -995,6 +1018,13 @@ header {
             }
           }
         }
+      }
+    }
+  }
+  &.search {
+    .container {
+      .content {
+        max-width: 100%;
       }
     }
   }
