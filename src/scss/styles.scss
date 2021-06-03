@@ -188,7 +188,7 @@ main {
   padding-right: 48px;
   max-width: 800px;
   width: 100%;
-  &:nth-child(even) {
+  &:nth-child(odd) {
     background-color: $lilac;
     border-radius: 5px;
   }
@@ -859,10 +859,12 @@ header {
         align-items: flex-start;
       }
       .articles {
+        width: 100%;
+      }
+      .topics + .articles {
         margin-top: 40px;
         padding-top: 40px;
         border-top: 1px solid $whisper;
-        width: 100%;
       }
       .topicblock {
         max-width: 485px;
