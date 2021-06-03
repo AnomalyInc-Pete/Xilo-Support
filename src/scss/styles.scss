@@ -980,6 +980,17 @@ header {
               font-size: 16px;
               background-color: $java;
             }
+            &.active {
+              background-color: $minsk;
+              padding: 4px 4px 4px 16px;
+              margin: -4px -4px -8px -16px;
+              border-radius: 50px;
+              &:hover {
+                .number {
+                  background-color: $mirage;
+                }
+              }
+            }
           }
         }
         ul {

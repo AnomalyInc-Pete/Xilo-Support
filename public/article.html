@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Xilo Support Portal -- Knowledge Base</title>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <span class="xilo-logo">Xilo</span>
+      <div class="question-form">
+        <form class="" action="index.html" method="post">
+          <input type="text" name="search-question" value="" placeholder="Type your question here">
+          <button type="button" name="button">Search</button>
+        </form>
+      </div>
+      <a href="#" class="home-link">Back to Xilo website</a>
+    </div>
+  </header>
+
+  <main>
+
+    <div id="pagetitle">
+
+      <div class="container">
+
+        <div class="breadcrumbs">
+          <span><a href="#">Xilo Support Portal</a> / <a href="#">Knowledge Base</a> / <a href="#">ArticleDKIM (Domain Key) Support</a> </span>
+        </div>
+
+        <h1>DKIM (Domain Key) Support</h1>
+
+      </div>
+
+    </div>
+
+    <div class="contentwrap">
+
+      <div class="container">
+
+        <div class="content">
+
+          <div class="article">
+
+            <div class="articlemeta">
+              <ul>
+                <li class="pubdate">March 2021</li>
+                <li class="topic"><a href="#">Domain Names</a></li>
+                <li class="tags"><a href="#">outbound</a>, <a href="#">transfer</a> </li>
+              </ul>
+              <a href="#" class="button print">Print</a>
+            </div>
+
+            <div class="articlebody">
+              <p>DomainKeys is way to ensure that non of your emails have been tampered with in transit. DomainKeys Identified Mail is an alternative name that is often abbreviated to DKIM.</p>
+              <p>The owner of a mail server can generate a custom DomainKey that has a public and private part. The private key is kept on the server, whereas the public half is placed within a TXT record in the DNS server.</p>
+              <p>When an email is sent from the mail server, it is digitally signed using the private key.</p>
+              <p>When the email is received, the recipient's email server can verify the DomainKeys public signature by sending a request to check the domain's DNS record. If these signatures match, the email is valid and has not been tampered with.</p>
+              <p>Domain keys are not for preventing spam or any malicious intent. However, if you are looking at adding another framework such as Sender Policy Framework this can become a powerful anti-spam solution, when used with DomainKeys.</p>
+              <p>You can administer DomainKeys and Sender Policy Framework directly in the "Email" section of your cPanel hosting account. Just login, click on "Email Authentication" and follow the steps.</p>
+            </div>
+
+            <div class="articlerating">
+              <span>Did you find this article helpful?</span>
+              <ul>
+                <li><a href="#" class="good">It was helpful</a></li>
+                <li><a href="#" class="okay">It was okay</a></li>
+                <li><a href="#" class="unhelpful">It was not helpful</a></li>
+              </ul>
+            </div>
+
+            <div class="relatedarticles">
+              <h3>Related Articles</h3>
+              <ul>
+                <li><a href="#">This is a related article, it can be quite long or just short. It depends.</a> </li>
+                <li><a href="#">This is a related article, it can be quite long or just short. It depends.</a> </li>
+                <li><a href="#">This is a related article, it can be quite long or just short. It depends.</a> </li>
+              </ul>
+            </div>
+
+            <div class="commentswrap">
+
+              <div class="addcomment">
+
+                <h3>Comments</h3>
+
+                <div class="commentformwrap">
+                  <form class="" action="index.html" method="post">
+                    <input type="text" name="commenter-name" value="" placeholder="Your name">
+                    <textarea name="name" rows="8" cols="80" placeholder="Your Comment"></textarea>
+                    <button type="button" name="button">Post</button>
+                  </form>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="sidebar">
+
+          <h3>Categories</h3>
+
+          <ul class="categorylist">
+            <li><a href="#">Billing <span class="number">12</span></a></li>
+            <li><a href="#">Control Panel <span class="number">12</span></a></li>
+            <li><a href="#">Databases <span class="number">12</span></a></li>
+            <li><a href="#">Domain Names <span class="number">12</span></a></li>
+            <li><a href="#" class="active">Email <span class="number">12</span></a>
+              <ul>
+                <li><a href="#">Guides <span class="number">5</span></a></li>
+              </ul>
+            </li>
+            <li><a href="#">FTP <span class="number">12</span></a></li>
+            <li><a href="#">Services <span class="number">12</span> </a></li>
+            <li><a href="#">SSL <span class="number">12</span> </a></li>
+            <li><a href="#">AUP (Acceptable Usage) <span class="number">12</span> </a></li>
+            <li><a href="#">Problems <span class="number">12</span> </a></li>
+            <li><a href="#">Products <span class="number">12</span></a>
+              <ul>
+                <li><a href="#">Reseller Hosting <span class="number">5</span></a></li>
+                <li><a href="#">Shared Hosting <span class="number">5</span></a></li>
+                <li><a href="#">Dedicated Servers <span class="number">5</span></a></li>
+                <li><a href="#">Cloud Servers <span class="number">5</span></a></li>
+                <li><a href="#">Premium Hosting <span class="number">5</span></a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>xilo Ltd. | Registered in England and Wales: 06451134 | VAT Registered: GB 930 3394 39 © Copyright 2003-2019 XILO Ltd. All rights reserved. E&OE</p>
+    </div>
+  </footer>
+
+</body>
+</html>
