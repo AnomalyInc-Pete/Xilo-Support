@@ -139,7 +139,9 @@ main {
         }
     }
     button {
-      margin-left: -288px;
+      margin-left: -289px;
+      max-width: 280px;
+      width: 100%;
       background: $java;
       border: none;
       color: $white;
@@ -180,6 +182,49 @@ main {
     }
   }
 }
+ul {
+  li {
+    &.pubdate, &.topic, &.tags {
+      @include flex-row;
+      align-items: center;
+      &::before {
+        content: "";
+        background-repeat: no-repeat;
+        display: flex;
+        margin-right: 6px;
+        background-size: contain;
+      }
+    }
+    &.pubdate {
+      &::before {
+        background-image: url(../images/calendar-icon.svg);
+        width: 15px;
+        height: 12px;
+      }
+    }
+    &.topic {
+      &::before {
+        background-image: url(../images/folder-icon.svg);
+        width: 16px;
+        height: 12px;
+      }
+    }
+    &.tags {
+      a {
+        margin-left: 4px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      &::before {
+        background-image: url(../images/tag-icon.svg);
+        width: 15px;
+        height: 12px;
+      }
+    }
+  }
+}
+
 
 .articleblock {
   @include flex-row;
@@ -324,11 +369,49 @@ main {
   }
 }
 
+// Form
+
+form {
+  input, textarea {
+    background: #FBF5F3;
+    border: 1px solid #F0E4E0;
+    box-sizing: border-box;
+    font-family: 'Brandon Text';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    &:focus {
+      outline:  none;
+      border-color: $quicksand;
+    }
+  }
+  .small {
+    max-width: 320px;
+    width: 100%;
+  }
+  button {
+    border: none;
+    font-family: 'Brandon Text';
+    font-size: 16px;
+    max-width: 140px;
+    width: 100%;
+    &.button {
+      margin-top: 0;
+      margin-top: 16px;
+    }
+  }
+}
+
 // Blocks
 
 header {
   padding: 21px 0px;
   width: 100%;
+  position: relative;
+  z-index: 2;
   @include block-shadow;
   .container {
     @include flex-row;
@@ -372,14 +455,21 @@ header {
           padding-right: 100px;
           max-width: 694px;
           width: 100%;
+          margin-bottom: 0;
         }
         button {
+          display: flex;
           align-self: flex-end;
           font-size: 14px;
           margin-right: auto;
-          margin-left: -162px;
+          margin-left: -147px;
+          margin-top: 0;
           position: relative;
           top: -6px;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          align-content: center;
         }
       }
     }
@@ -397,6 +487,10 @@ header {
   position: relative;
   background: $whisper;
   padding-top: 100px;
+  .container {
+    position: relative;
+    z-index: 2;
+  }
   .common-questions {
     @include flex-column;
     margin-top: 56px;
@@ -427,6 +521,40 @@ header {
           color: $mirage;
         }
       }
+    }
+  }
+  .decor {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    .left-donut, .mid-left-donut, .right-donut, .small-right-donut, {
+      position: absolute;
+    }
+    .left-donut {
+      top: 500px;
+      left: 0;
+      width: 199px;
+      height: 199px;
+    }
+    .mid-left-donut {
+      top: 180px;
+      left: 190px;
+      width: 80px;
+      height: 80px;
+    }
+    .right-donut {
+      top: -155px;
+      right: -120px;
+      width: 403px;
+      height: 403px;
+    }
+    .small-right-donut {
+      top: 561px;
+      right: -60px;
+      width: 148px;
+      height: 148px;
     }
   }
 }
@@ -560,6 +688,9 @@ header {
         color: $mirage;
         font-size: 16px;
         margin-bottom: 16px;
+        &:hover {
+          border-top-color: $mirage;
+        }
         .topic {
           @include flex-row;
           align-items: center;
@@ -755,11 +886,40 @@ header {
     padding-bottom: 180px;
     max-width: 1436px;
     width: 100%;
+    position: relative;
+    z-index: 2;
     .breadcrumbs {
       margin-bottom: 8px;
     }
     h1 {
       margin-bottom: 0;
+    }
+  }
+  .decor {
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 0;
+    .left-donut, .right-donut, .middle-donut {
+      position: absolute;
+    }
+    .left-donut {
+      top: 260px;
+      left: 0;
+      width: 199px;
+      height: 199px;
+    }
+    .middle-donut {
+      top: -45px;
+      left: 50%;
+      width: 148px;
+      height: 148px;
+    }
+    .right-donut {
+      top: -155px;
+      right: -120px;
+      width: 403px;
+      height: 403px;
     }
   }
 }
@@ -1043,6 +1203,129 @@ header {
 
 #pagetitle + .contentwrap {
   margin-top: -150px;
+}
+
+.article {
+  .articlemeta {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $alto;
+    padding-bottom: 16px;
+    padding-left: 32px;
+    padding-right: 40px;
+    margin-top: -24px;
+    margin-left: -32px;
+    margin-right: -40px;
+    margin-bottom: 30px;
+    .button {
+      margin-top: 0;
+      padding: 16px 30px;
+    }
+    ul {
+      @include flex-row;
+      li {
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .articlebody {
+    p {
+      font-size: 20px;
+      color: $mirage;
+      margin-bottom: 24px;
+      line-height: 27px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+  hr {
+    padding-left: 32px;
+    padding-right: 40px;
+    margin-left: -32px;
+    margin-right: -40px;
+    border: 0;
+    border-top: 1px solid $alto;
+    margin-bottom: 40px;
+  }
+  .articlerating {
+    margin-top: 40px;
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 350px;
+    width: 100%;
+    margin-bottom: 56px;
+    span {
+      color: $boulder;
+      font-weight: 500;
+      font-size: 17px;
+    }
+    ul {
+      @include flex-row;
+      li {
+        margin-right: 11px;
+        &:last-child {
+          margin-right: 0;
+        }
+        a {
+          &.good, &.okay, &.unhelpful {
+            text-indent: -99999px;
+            display: flex;
+            width: 27px;
+            height: 27px;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+          &.good {
+            background-image: url(../images/happy-face.svg);
+          }
+          &.okay {
+            background-image: url(../images/neutral-face.svg);
+          }
+          &.unhelpful {
+            background-image: url(../images/unhappy-face.svg);
+          }
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+      }
+    }
+  }
+  .relatedarticles {
+    padding-bottom: 48px;
+    ul {
+      margin-top: 20px;
+      li {
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        a {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .commentswrap {
+    @include flex-column;
+    .addcomment {
+      .commentformwrap {
+        margin-top: 40px;
+        margin-bottom: 60px;
+        form {
+          @include flex-column;
+        }
+      }
+    }
+  }
 }
 
 
