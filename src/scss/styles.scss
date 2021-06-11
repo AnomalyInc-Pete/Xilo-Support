@@ -63,6 +63,9 @@ html {
   max-width: 85%;
   width: 100%;
   margin: 0 auto;
+  @media screen and (max-width: 900px) {
+    max-width: 90%;
+  }
 }
 
 a {
@@ -140,6 +143,18 @@ main {
         &:focus {
           outline: none;
         }
+        @media screen and (max-width: 700px) {
+          padding: 16px 60px 20px 60px;
+        }
+        @media screen and (max-width: 450px) {
+          padding: 16px 20px 20px 60px;
+          font-size: 20px;
+        }
+        @media screen and (max-width: 350px) {
+          background-image: none;
+          padding: 16px 20px 20px 20px;
+          text-align: center;
+        }
     }
     button {
       margin-left: -289px;
@@ -160,6 +175,11 @@ main {
       top: -1px;
       &:hover {
         background-color: $mirage;
+      }
+      @media screen and (max-width: 700px) {
+        padding: 12px 32px;
+        margin-left: 0;
+        max-width: 100%;
       }
     }
   }
@@ -494,6 +514,9 @@ header {
   position: relative;
   background: $whisper;
   padding-top: 100px;
+  @media screen and (max-width: 775px) {
+    height: auto;
+  }
   .container {
     position: relative;
     z-index: 2;
@@ -501,12 +524,24 @@ header {
   .common-questions {
     @include flex-column;
     margin-top: 56px;
+    @media screen and (max-width: 775px) {
+      margin-top: 32px;
+      margin-bottom: 70px;
+    }
     .row-wrap {
       max-width: 1075px;
       width: 100%;
       justify-content: space-between;
       margin: 0 auto;
       margin-top: 40px;
+      @media screen and (max-width: 900px) {
+        margin-top: 20px;
+        max-width: 100%;
+      }
+      @media screen and (max-width: 775px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
       .block {
         @include flex-column;
         border-radius: 5px;
@@ -518,14 +553,79 @@ header {
         align-items: flex-start;
         @include block-shadow;
         transition: 0.25s;
+        @media screen and (max-width: 1260px) {
+          margin-right: 10px;
+        }
+        @media screen and (max-width: 1180px) {
+          padding: 24px;
+        }
+        @media screen and (max-width: 775px) {
+          max-width: 48%;
+        }
+        @media screen and (max-width: 650px) {
+          max-width: 100%;
+          margin-bottom: 24px;
+          margin-right: 0;
+          width: 100%;
+          box-shadow: none;
+        }
+        &:last-child {
+          margin-right: 0;
+          @media screen and (max-width: 775px) {
+            margin-top: 16px;
+          }
+        }
+        &:nth-child(2) {
+          @media screen and (max-width: 775px) {
+            margin-right: 0;
+          }
+        }
         &:hover {
           transition: 0.25s;
           border-top: 5px solid $mirage;
           box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.07), 0px 4px 23px 8px rgba(0, 0, 0, 0.11);
+          @media screen and (max-width: 650px) {
+            box-shadow: none;
+          }
         }
         p {
           font-size: emCal(16px);
           color: $mirage;
+        }
+      }
+      .slick-dots {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 10px;
+        li {
+          margin-right: 8px;
+          &:last-child {
+            margin-right: 0;
+          }
+          button {
+            background: none;
+            border: none;
+            text-indent: -999999px;
+            background-color: $minsk;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+          }
+          &:hover {
+            button {
+              background-color: $java;
+            }
+          }
+          &.slick-active {
+            button {
+              background-color: $java;
+            }
+          }
         }
       }
     }
@@ -577,6 +677,9 @@ header {
     margin-top: -40px;
     position: relative;
     z-index: 100;
+    @media screen and (max-width: 775px) {
+      // margin-top: 40px;
+    }
     .overview {
       @include  flex-row;
       justify-content: space-between;

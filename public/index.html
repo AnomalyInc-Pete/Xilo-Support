@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/slick.css">
     <title>Xilo Support Portal</title>
 </head>
 <body>
@@ -39,15 +40,15 @@
         <div class="common-questions">
           <h2>Commonly asked questions</h2>
           <div class="row-wrap">
-            <a href="" class="block turquioise-top">
-              <p>Praesent aliquet facilisis leo eget imperdiet. Donec tristique id massa id vestibulum?</p>
-            </a>
-            <a href="" class="block turquioise-top">
-              <p>Duis eleifend, velit ut auctor luctus, magna mi pharetra justo, venenatis commodo orci enim?</p>
-            </a>
-            <a href="" class="block turquioise-top">
-              <p>Vestibulum quis ipsum eu odio sodales scelerisque quis eu dui. Fusce ligula velit, pulvinar sit amet consequat?</p>
-            </a>
+              <a href="" class="block turquioise-top">
+                <p>Praesent aliquet facilisis leo eget imperdiet. Donec tristique id massa id vestibulum?</p>
+              </a>
+              <a href="" class="block turquioise-top">
+                <p>Duis eleifend, velit ut auctor luctus, magna mi pharetra justo, venenatis commodo orci enim?</p>
+              </a>
+              <a href="" class="block turquioise-top">
+                <p>Vestibulum quis ipsum eu odio sodales scelerisque quis eu dui. Fusce ligula velit, pulvinar sit amet consequat?</p>
+              </a>
           </div>
         </div>
 
@@ -254,6 +255,31 @@
       <p>xilo Ltd. | Registered in England and Wales: 06451134 | VAT Registered: GB 930 3394 39 © Copyright 2003-2019 XILO Ltd. All rights reserved. E&OE</p>
     </div>
   </footer>
+
+<!--Scripts-->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/slick.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.common-questions .row-wrap').slick({
+      slidesToShow: 1,
+       slidesToScroll: 1,
+       autoplay: false,
+       autoplaySpeed: 2000,
+       mobileFirst: true,
+       adaptiveHeight: true,
+       arrows: false,
+       dots: true,
+       responsive: [
+          {
+             breakpoint: 650,
+             settings: "unslick"
+          }
+       ]
+  });
+});
+</script>
 
 </body>
 </html>
