@@ -636,6 +636,9 @@ header {
     position: absolute;
     z-index: 0;
     top: 0;
+    @media screen and (max-width: 730px) {
+      display: none;
+    }
     .left-donut, .mid-left-donut, .right-donut, .small-right-donut, {
       position: absolute;
     }
@@ -677,14 +680,22 @@ header {
     margin-top: -40px;
     position: relative;
     z-index: 100;
-    @media screen and (max-width: 775px) {
-      // margin-top: 40px;
+    @media screen and (max-width: 760px) {
+      max-width: 90%;
+    }
+    @media screen and (max-width: 350px) {
+      padding: 8px 16px;
     }
     .overview {
-      @include  flex-row;
+      @include flex-row;
       justify-content: space-between;
       align-items: center;
       align-content: center;
+      h5 {
+        @media screen and (max-width: 420px) {
+          font-size: 20px;
+        }
+      }
       ul {
         li {
           display: none;
@@ -692,6 +703,9 @@ header {
           font-weight: 500;
           flex-direction: row;
           align-items: center;
+          @media screen and (max-width: 490px) {
+            font-size: 0;
+          }
           &::after {
             content: "";
             text-indent: -99999px;
@@ -701,6 +715,9 @@ header {
             height: 40px;
             margin-top: 6px;
             margin-left: 8px;
+            @media screen and (max-width: 490px) {
+              margin-left: 0;
+            }
           }
           &.online {
             &::after {
@@ -761,16 +778,28 @@ header {
     padding-bottom: 60px;
     max-width: 1193px;
     width: 100%;
+    @media screen and (max-width: 1245px) {
+      max-width: 90%;
+    }
     .titles {
       @include flex-row;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 40px;
+      @media screen and (max-width: 600px) {
+        flex-flow: column;
+      }
       a {
         font-size: 24px;
         color: $mirage;
         @include flex-row;
         align-items: center;
+        @media screen and (max-width: 600px) {
+          margin-top: 16px;
+        }
+        @media screen and (max-width: 440px) {
+          font-size: 18px;
+        }
         &.right-arrow {
           &::after {
             content: "";
@@ -785,19 +814,31 @@ header {
       }
     }
     .topics-wrap {
-      @include flex-row;
-      flex-wrap: wrap;
+      display: flex;
       justify-content: space-between;
+      flex-wrap: wrap;
+      @media screen and (max-width: 1160px) {
+        // justify-content: space-around;
+      }
       .block {
         @include block-shadow;
         border-radius: 5px;
         border-top: 5px solid $java;
         padding: 24px;
-        max-width: 225px;
         width: 100%;
         color: $mirage;
         font-size: 16px;
         margin-bottom: 16px;
+        flex: 0 19%;
+        @media screen and (max-width: 1160px) {
+          flex: 0 32%;
+        }
+        @media screen and (max-width: 800px) {
+          flex: 0 49%;
+        }
+        @media screen and (max-width: 540px) {
+          flex: 0 100%;
+        }
         &:hover {
           border-top-color: $mirage;
         }
@@ -812,6 +853,7 @@ header {
             height: 44px;
             background-repeat: no-repeat;
             background-position: center;
+            flex-shrink: 0;
           }
           &.billing {
             &::before {
@@ -1010,6 +1052,9 @@ header {
     max-width: 100%;
     position: relative;
     z-index: 0;
+    @media screen and (max-width: 730px) {
+      display: none;
+    }
     .left-donut, .right-donut, .middle-donut {
       position: absolute;
     }
