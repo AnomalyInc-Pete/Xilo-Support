@@ -441,6 +441,9 @@ header {
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    @media screen and (max-width: 1440px) {
+      max-width: 90%;
+    }
     a {
       &.home-link {
         color: $mirage;
@@ -470,6 +473,16 @@ header {
     .question-form {
       max-width: 694px;
       width: 100%;
+      @media screen and (max-width: 1240px) {
+        max-width: 500px;
+        align-self: center;
+      }
+      @media screen and (max-width: 1024px) {
+        max-width: 450px;
+      }
+      @media screen and (max-width: 900px) {
+        max-width: 375px;
+      }
       form {
         justify-content: space-between;
         @include flex-row;
@@ -483,6 +496,14 @@ header {
           max-width: 694px;
           width: 100%;
           margin-bottom: 0;
+          @media screen and (max-width: 1024px) {
+            font-size: 18px;
+            background-image: none;
+            padding-left: 24px;
+          }
+          @media screen and (max-width: 900px) {
+            padding-right: 50px;
+          }
         }
         button {
           display: flex;
@@ -497,6 +518,60 @@ header {
           align-items: center;
           justify-content: center;
           align-content: center;
+          max-width: 142px;
+          @media screen and (max-width: 1024px) {
+            font-size: 12px;
+            top: -7px;
+            margin-left: -149px;
+          }
+        }
+      }
+    }
+  }
+  &.innerheader {
+    .container {
+      @media screen and (max-width: 900px) {
+        @include flex-column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+    .xilo-logo {
+      @media screen and (max-width: 900px) {
+        max-width: 100%;
+        background-position: center;
+        margin-bottom: 12px;
+      }
+    }
+    .question-form {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+      &.mobile {
+        display: none;
+        @media screen and (max-width: 900px) {
+          display: flex;
+          width: 100%;
+          max-width: 100%;
+          margin-top: 16px;
+          form {
+            max-width: 100%;
+            input {
+              max-width: 100%;
+              align-self: center;
+            }
+          }
+        }
+        @media screen and (max-width: 440px) {
+          form {
+            @include flex-column;
+            button {
+              margin-left: 0;
+              max-width: 100%;
+              margin-top: 16px;
+            }
+          }
         }
       }
     }
@@ -1104,6 +1179,9 @@ header {
     width: 100%;
     position: relative;
     z-index: 2;
+    @media screen and (max-width: 1440px) {
+      max-width: 90%;
+    }
     .breadcrumbs {
       margin-bottom: 8px;
     }
@@ -1155,6 +1233,9 @@ header {
     border-radius: 5px;
     padding: 40px 32px;
     justify-content: space-between;
+    @media screen and (max-width: 1440px) {
+      max-width: 90%;
+    }
     .listwrap {
       max-width: 48%;
       width: 100%;
