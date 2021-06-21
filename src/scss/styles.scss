@@ -123,6 +123,30 @@ main {
   }
 }
 
+.print {
+  @include flex-row;
+  align-items: center;
+  span {
+    @media screen and (max-width: 1110px) {
+      display: none;
+    }
+  }
+  &::before {
+    content: "";
+    width: 20px;
+    height: 23px;
+    background-image: url(../images/printer-icon.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+    display: flex;
+    margin-right: 8px;
+    @media screen and (max-width: 1110px) {
+      margin-right: 0;
+    }
+  }
+}
+
 .question-form {
   margin: 0 auto;
   @include flex-column;
@@ -485,6 +509,9 @@ form {
   .small {
     max-width: 320px;
     width: 100%;
+    @media screen and (max-width: 550px) {
+      max-width: 100%;
+    }
   }
   button {
     border: none;
@@ -1411,6 +1438,19 @@ header {
   margin-bottom: 105px;
   position: relative;
   z-index: 100;
+  &.articlewrap {
+    .container {
+      @media screen and (max-width: 1000px) {
+        @include flex-column;
+      }
+      .sidebar {
+        @media screen and (max-width: 1000px) {
+          max-width: 100%;
+        }
+      }
+    }
+
+  }
   .container {
     max-width: 1436px;
     width: 100%;
@@ -1666,14 +1706,39 @@ header {
     margin-left: -32px;
     margin-right: -40px;
     margin-bottom: 30px;
+    @media screen and (max-width: 1000px) {
+      border-bottom: 0;
+      background-color: $lilac;
+      padding: 0;
+      margin: 0;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    @media screen and (max-width: 530px) {
+      padding-top: 24px;
+    }
     .button {
       margin-top: 0;
       padding: 16px 30px;
+      @media screen and (max-width: 1110px) {
+        padding: 16px;
+      }
     }
     ul {
       @include flex-row;
+      flex-wrap: wrap;
+      @media screen and (max-width: 530px) {
+        width: 100%;
+        max-width: 100%;
+      }
       li {
         margin-right: 16px;
+        @media screen and (max-width: 600px) {
+          margin-bottom: 8px;
+        }
+        @media screen and (max-width: 400px) {
+          margin-right: 0;
+        }
         &:last-child {
           margin-right: 0;
         }
@@ -1686,6 +1751,10 @@ header {
       color: $mirage;
       margin-bottom: 24px;
       line-height: 27px;
+      @media screen and (max-width: 1170px) {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
       &:last-of-type {
         margin-bottom: 0;
       }
@@ -1699,6 +1768,9 @@ header {
     border: 0;
     border-top: 1px solid $alto;
     margin-bottom: 40px;
+    @media screen and (max-width: 760px) {
+      display: none;
+    }
   }
   .articlerating {
     margin-top: 40px;
@@ -1708,6 +1780,9 @@ header {
     max-width: 350px;
     width: 100%;
     margin-bottom: 56px;
+    @media screen and (max-width: 450px) {
+      @include flex-column;
+    }
     span {
       color: $boulder;
       font-weight: 500;
@@ -1715,6 +1790,9 @@ header {
     }
     ul {
       @include flex-row;
+      @media screen and (max-width: 450px) {
+        margin-top: 15px;
+      }
       li {
         margin-right: 11px;
         &:last-child {
@@ -1758,6 +1836,9 @@ header {
         a {
           font-size: 20px;
           font-weight: 500;
+          @media screen and (max-width: 500px) {
+            font-size: 16px;
+          }
         }
       }
     }
