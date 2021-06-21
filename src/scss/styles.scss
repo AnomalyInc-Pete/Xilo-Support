@@ -421,8 +421,19 @@ ul {
     .button {
       padding: 16px 20px;
       margin-right: 16px;
+      @media screen and (max-width: 360px) {
+        margin-right: 8px;
+        padding: 16px 0px;
+        width: 100%;
+        max-width: 17%;
+        text-align: center;
+      }
       &.next {
         margin-left: 0;
+        @media screen and (max-width: 480px) {
+          margin-right: 0;
+          margin-top: 0;
+        }
         &::after {
           margin-left: 0;
         }
@@ -434,6 +445,19 @@ ul {
       }
       &.current {
         background-color: $minsk;
+      }
+      &.previous, &.next {
+        @media screen and (max-width: 480px) {
+          max-width: inherit;
+          // width: 100%;
+          padding-left: 0;
+          padding-right: 0;;
+          justify-content: center;
+        }
+        @media screen and (max-width: 360px) {
+          max-width: 15%;
+          width: 100%;
+        }
       }
     }
   }
