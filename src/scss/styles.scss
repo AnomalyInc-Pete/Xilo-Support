@@ -256,9 +256,17 @@ ul {
   padding-right: 48px;
   max-width: 800px;
   width: 100%;
+  @media screen and (max-width: 450px) {
+    padding-left: 0;
+    margin-bottom: 0;
+    padding-right: 0;
+  }
   &:nth-child(odd) {
     background-color: $lilac;
     border-radius: 5px;
+    @media screen and (max-width: 450px) {
+      background-color: $white;
+    }
   }
   &::before {
     content: "";
@@ -267,7 +275,14 @@ ul {
     display: flex;
     margin-right: 24px;
     margin-left: 8px;
+    flex-shrink: 0;
     background-image: url(../images/green-document-icon.svg);
+    @media screen and (max-width: 1090px) {
+      margin-left: 0;
+    }
+    @media screen and (max-width: 450px) {
+      display: none;
+    }
   }
   .linkwrap {
     @include flex-column;
@@ -275,9 +290,15 @@ ul {
   a {
     font-size: 20px;
     font-weight: 500;
+    @media screen and (max-width: 1090px) {
+      font-size: 18px;
+    }
   }
   ul {
     @include flex-row;
+    @media screen and (max-width: 1090px) {
+      flex-wrap: wrap;
+    }
     li {
       font-size: 16px;
       margin-right: 16px;
@@ -336,8 +357,18 @@ ul {
   @include flex-row;
   margin-bottom: 48px;
   margin-top: 16px;
+  @media screen and (max-width: 480px) {
+    max-width: 100%;
+    width: 100%;
+  }
+  @media screen and (max-width: 360px) {
+    flex-wrap: wrap;
+  }
   .button {
     margin-top: 0;
+    @media screen and (max-width: 580px) {
+      font-size: 14px;
+    }
     &.inactive {
       background-color: $whisper;
     }
@@ -353,6 +384,9 @@ ul {
       height: 16px;
       margin-left: 16px;
     }
+    @media screen and (max-width: 360px) {
+      margin-top: 8px;
+    }
   }
   .previous {
     @include flex-row;
@@ -364,6 +398,19 @@ ul {
       height: 16px;
       margin-right: 16px;
       transform: rotate(180deg);
+    }
+  }
+  .next, .previous {
+    @media screen and (max-width: 480px) {
+      max-width: 48%;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;;
+      justify-content: center;
+    }
+    @media screen and (max-width: 360px) {
+      max-width: 100%;
+      margin-left: 0;
     }
   }
   &.numbered {
@@ -1338,6 +1385,8 @@ header {
 .contentwrap {
   margin-top: 56px;
   margin-bottom: 105px;
+  position: relative;
+  z-index: 100;
   .container {
     max-width: 1436px;
     width: 100%;
