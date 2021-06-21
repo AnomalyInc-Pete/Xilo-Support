@@ -1236,9 +1236,23 @@ header {
     @media screen and (max-width: 1440px) {
       max-width: 90%;
     }
+    @media screen and (max-width: 730px) {
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 470px) {
+      padding: 24px 16px;
+    }
     .listwrap {
       max-width: 48%;
       width: 100%;
+      @media screen and (max-width: 730px) {
+        max-width: 100%;
+      }
+      &:last-child {
+        @media screen and (max-width: 730px) {
+          margin-top: 24px;
+        }
+      }
       ul {
         margin-top: 16px;
         li {
@@ -1249,14 +1263,26 @@ header {
           a {
             font-weight: 500;
             font-size: 20px;
+            @media screen and (max-width: 900px) {
+              font-size: 18px;
+            }
           }
           ul {
             @include flex-row;
             margin-top: 10px;
+            @media screen and (max-width: 1080px) {
+              flex-wrap: wrap;
+            }
             li {
               font-size: 16px;
               margin-right: 16px;
               margin-bottom: 0px;
+              @media screen and (max-width: 1080px) {
+                margin-bottom: 8px;
+              }
+              @media screen and (max-width: 900px) {
+                font-size: 14px;
+              }
               &:last-child {
                 margin-right: 0;
               }
