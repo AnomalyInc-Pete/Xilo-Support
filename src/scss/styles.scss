@@ -1345,6 +1345,12 @@ header {
     @include flex-row;
     border-radius: 5px;
     justify-content: space-between;
+    @media screen and (max-width: 1440px) {
+      max-width: 90%;
+    }
+    @media screen and (max-width: 800px) {
+      @include flex-column;
+    }
     .content {
       padding-left: 32px;
       padding-top: 40px;
@@ -1355,6 +1361,14 @@ header {
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
+      @media screen and (max-width: 1440px) {
+        padding-right: 32px;
+      }
+      @media screen and (max-width: 530px) {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 24px;
+      }
       h2 {
         width: 100%;
         margin-bottom: 20px;
@@ -1380,6 +1394,12 @@ header {
         width: 100%;
         background-color: $lilac;
         margin-bottom: 24px;
+        @media screen and (max-width: 1440px) {
+          max-width: 48%;
+        }
+        @media screen and (max-width: 1250px) {
+          max-width: 100%;
+        }
         .title {
           background: $whisper;
           @include flex-row;
@@ -1391,6 +1411,12 @@ header {
             color: $mirage;
             @include flex-row;
             align-items: center;
+            @media screen and (max-width: 500px) {
+              font-size: 18px;
+            }
+            @media screen and (max-width: 400px) {
+              font-size: 16px;
+            }
             &::before {
               display: flex;
               content: "";
@@ -1398,7 +1424,15 @@ header {
               height: 17px;
               background-image: url(../images/folder-icon.svg);
               background-repeat: no-repeat;
+              background-size: contain;
               margin-right: 8px;
+              @media screen and (max-width: 400px) {
+                width: 18px;
+                height: 14px;
+              }
+              @media screen and (max-width:380px) {
+                display: none;
+              }
             }
           }
         }
@@ -1407,10 +1441,16 @@ header {
           padding-left: 46px;
           @include flex-column;
           color: $mirage;
+          @media screen and (max-width: 500px) {
+            padding-left: 24px;
+          }
           li {
             font-size: 18px;
             font-weight: 400;
             margin-bottom: 16px;
+            @media screen and (max-width: 400px) {
+              font-size: 16px;
+            }
             a {
               color: $mirage;
               @include flex-row;
@@ -1442,6 +1482,12 @@ header {
       padding: 32px 32px;
       border-top-right-radius: 5px;
       border-bottom-right-radius: 5px;
+      @media screen and (max-width: 900px) {
+        max-width: 300px;
+      }
+      @media screen and (max-width: 800px) {
+        max-width: 100%;
+      }
       h3 {
         color: $white;
         margin-bottom: 16px;
@@ -1456,6 +1502,9 @@ header {
             @include flex-row;
             font-weight: 500;
             justify-content: space-between;
+            @media screen and (max-width: 900px) {
+              font-size: 16px;
+            }
             &:hover {
               color: $java;
               .number {
